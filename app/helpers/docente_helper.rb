@@ -1,0 +1,2 @@
+module DocenteHelper
+end

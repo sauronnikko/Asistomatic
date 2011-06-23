@@ -1,8 +1,24 @@
 Asistomatic::Application.routes.draw do
 
+  get "docentes/show"
+
+  get "docentes/new"
+
+  get "docentes/edit"
+
+  get "docentes/delete"
+
+
   get "pages/index"
 
-  root :to => "pages#index"
+  #root :to => "pages#index"
+  match "pages/home" => "pages#home"
+
+  match 'docentes/index' => 'docentes#index', :as => 'index'
+  match 'docentes/show' => 'docentes#show', :as => 'show'
+  match 'docentes/new' => 'docentes#new', :as => 'new'
+  match 'docentes/destroy' => 'docentes#destroy', :as => 'destroy'
+  resources :docentes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,26 @@
+<h1><%= link_to "Nuevo Docente", new_path %></h1>
+
+<table>
+  <tr>
+    <th><td>Nombres<td></th>
+    <th><td>Apellidos</td></th>
+    <th><td>Cèdula</td></th>
+    <th><td>Email</td></th>
+    <th><td></td></th>
+  </tr>
+  <% for docente in @docentes %>
+    <tr>
+      <th><td><%= docente.nombres %></td></th>
+      <th><td><%= docente.apellidos %></td></th>
+      <th><td><%= docente.cedula %></td></th>
+      <th><td><%= docente.email %></td></th>
+      <th><td><%= link_to "Eliminar", :action => :destroy, :id => docente.id %></td></th>
+      <th><td><%= link_to "Editar", :action => :edit, :id => docente.id %></td></th>
+    <tr>
+  <% end %> 
+
+
+
+</table>
+
+

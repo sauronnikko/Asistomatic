@@ -1,0 +1,24 @@
+<h1>Nuevo Docente</h1>
+
+<table>
+    
+
+    <%= form_for(@docente) do |f| %>
+      <div class="field">
+        <tr><%= f.label :nombres %><%= f.text_field :nombres %></br></tr>
+      </div>
+      <div class="field">
+        <tr><%= f.label :apellidos %><%= f.text_field :apellidos %></br></tr>
+      </div>
+      <div class="field">
+        <tr><%= f.label :cedula %><%= f.text_field :cedula %></br></tr>
+      </div>
+      <div class="field">
+        <tr><%= f.label :email %><%= f.text_field :email %></br></tr>
+      </div>
+      <div class="actions">
+        <tr><%= f.submit 'Agregar' %></tr>
+      </div>
+    <% end %>
+
+</table>
