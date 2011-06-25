@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110521153956) do
+ActiveRecord::Schema.define(:version => 20110625150428) do
+
+  create_table "bloques", :force => true do |t|
+    t.integer  "numero"
+    t.time     "hora_ini"
+    t.time     "hora_fin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bloques", ["numero"], :name => "index_bloques_on_numero", :unique => true
 
   create_table "docentes", :force => true do |t|
     t.string   "nombres",    :null => false

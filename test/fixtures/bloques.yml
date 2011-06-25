@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20110625145635
+#
+# Table name: bloques
+#
+#  id         :integer(4)      not null, primary key
+#  numero     :integer(4)
+#  hora_ini   :time
+#  hora_fin   :time
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  numero: 1
+  hora_ini: 2011-06-25 10:26:36
+  hora_fin: 2011-06-25 10:26:36
+
+two:
+  numero: 1
+  hora_ini: 2011-06-25 10:26:36
+  hora_fin: 2011-06-25 10:26:36
