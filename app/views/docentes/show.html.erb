@@ -1,4 +1,28 @@
-<h1>Información sobre el docente</h1>
+<h1>Información sobre el docente <%= @docente.nombres %> <%= @docente.apellidos %></h1>
+
+<p>Cédula: <%= @docente.cedula %></p>
+<p>Email: <%= @docente.email %></p>
+
+<h2>Inasistencias</h2>
+
+<div class="inasistencia">
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Previas</a></li>
+    </ul>
+    <div id="#tabs-1">
+      <p>Hola</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+</script>
+
+
 
 
 

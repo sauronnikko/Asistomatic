@@ -16,6 +16,8 @@ class Docente < ActiveRecord::Base
 
   attr_accessible :nombres, :apellidos, :cedula, :email
 
+  has_many :inasistencia
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates_presence_of :nombres, :apellidos, :cedula

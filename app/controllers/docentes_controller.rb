@@ -10,7 +10,8 @@ end
 
 
   def show
-    @docente = Docente.find(params[:id])    
+    @docente = Docente.find(params[:id])   
+     
   end
 
   def new
