@@ -18,8 +18,10 @@ class Bloque < ActiveRecord::Base
   attr_accessible :numero, :hora_ini, :hora_fin
 
   validates :numero,  :presence   => true,
-                      :uniqueness => true
-                  
+                      :uniqueness => true,
+                      :numericality => { :greater_than => 0, :only_integer => true } 
+                 
+ 
   validates :hora_ini, :presence => true
   validates :hora_fin, :presence => true
 

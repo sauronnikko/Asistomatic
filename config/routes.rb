@@ -23,7 +23,8 @@ Asistomatic::Application.routes.draw do
 
   get "pages/index"
 
-  #root :to => "pages#index"
+  root :to => "pages#home", :as => 'home'
+
   match "pages/home" => "pages#home"
 
   match 'docentes/index' => 'docentes#index', :as => 'docentes_index'
@@ -33,11 +34,16 @@ Asistomatic::Application.routes.draw do
   resources :docentes
 
   #Bloques 
-  match 'bloques/index' => 'bloques#index', :as => 'bloques_index'
-  match 'bloques/show' => 'bloques#show', :as => 'show'
-  match 'bloques/new' => 'bloques#new', :as => 'new'
-  match 'bloques/destroy' => 'bloques#destroy', :as => 'destroy'
-  resources :bloques
+  match '/bloques/index' => 'bloques#index', :as => 'bloques_index'
+  match '/bloques/show' => 'bloques#show', :as => 'bloques_show'
+  match '/bloques/new_option' => 'bloques#new_option', :as => 'bloques_new_option'
+  match '/bloques/new_individual' => 'bloques#new_individual', :as => 'bloques_new_individual'
+  match '/bloques/new_varios' => 'bloques#new_varios', :as => 'bloques_new_varios'
+  match '/bloques/destroy' => 'bloques#destroy', :as => 'destroy'
+
+
+
+#  resources :bloques
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,53 @@
+<table>
+
+    <%= form_for :bloque do |f| %>
+
+      <div class="field">
+        <tr>
+          <td><%= f.label "Número de Bloque" %></td><td><%= f.text_field :numero, :type => 'number', :size => 3, :maximum_length => 3 %></br>
+          </td>
+        </tr>
+      </div>
+
+      <div class="field">
+        <tr><td><%= f.label "Hora inicial" %></td><td><%= f.select :hora_ini, options_for_select(@horas) %></br></td>
+      </div>
+      <div class="field">
+        <td><%= f.label "Hora final" %></td><td><%= f.select :hora_fin, options_for_select(@horas) %></br></td>
+      </div>
+
+      <div class="field">
+        <td><%= f.label "Intervalos" %></td><td><%= select 'intervalo', '', options_for_select(@intervalos) %></br></td></tr>
+      </div>
+
+
+      <div class="field">
+        <tr><td><%= f.label "Fecha inicial" %></td><td><%= text_field_tag "datepicker_ini", '', :size => 8 %></br></td>
+      </div>
+      <div class="field">
+        <td><%= f.label "Fecha final" %></td><td><%= text_field_tag "datepicker_fin", '', :size => 8 %></td></br>
+      </tr>
+      </div>
+
+      <div class="field">
+        <tr><td><%= f.label "Incluir sábados" %></td><td><%= check_box_tag 'incluir_sab' %></td></br>
+      </div>
+      <div class="field">
+        <td><%= f.label "Incluir domingos" %></td><td><%= check_box_tag 'incluir_dom' %></br></tr>
+      </div>
+
+
+      <div class="actions">
+        <tr><td colspan=4 ><%= f.submit 'Agregar' %></td></tr>
+      </div>
+    <% end %>
+
+</table>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $("#datepicker_ini").datepicker();
+    $("#datepicker_fin").datepicker();
+  });
+</script>
+

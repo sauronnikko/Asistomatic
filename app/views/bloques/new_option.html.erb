@@ -1,0 +1,33 @@
+<h1>Agregar nuevo bloque de horario</h1>
+
+
+    <%= form_tag 'radio', :remote => true do %>
+      <div class="field">
+        <tr>
+          <td><%= label_tag "Elegir tipo de creación de bloques" %></td>
+          <td>Un bloque por día<%= radio_button_tag 'tipo_creacion', 'individual' %></br></td>
+          <td>Varios bloques por día<%= radio_button_tag 'tipo_creacion', 'varios' %></br></td>
+          
+        </tr>
+      </div>
+
+    <% end %>
+
+  <div id="bloques_new"/>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $("#tipo_creacion_individual").change(function() {
+      $.post("/bloques/new_individual", function(data) {
+        $("#bloques_new").html(data);
+      })
+    });      
+    $("#tipo_creacion_varios").change(function() {
+      $.post("/bloques/new_varios", function(data) {
+        $("#bloques_new").html(data);
+      })
+    });      
+
+  });
+</script>
+
