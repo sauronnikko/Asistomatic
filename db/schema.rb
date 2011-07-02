@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110702160107) do
+ActiveRecord::Schema.define(:version => 20110702214522) do
 
   create_table "bloques", :force => true do |t|
     t.integer  "numero"
@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(:version => 20110702160107) do
 
   create_table "inasistencia", :force => true do |t|
     t.string   "justificacion"
-    t.string   "observaciones"
+    t.string   "observacion"
+    t.integer  "docente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "docente_id"
   end
 
 end

@@ -11,7 +11,7 @@ end
 
   def show
     @docente = Docente.find(params[:id])   
-     
+    @inasistencia = Inasistencia.new  
   end
 
   def new
@@ -57,8 +57,6 @@ end
   end
 
   def destroy
-
-    puts params[:id]
     @docente = Docente.find(params[:id])
     @docente.destroy
     respond_to do |format|

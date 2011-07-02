@@ -5,25 +5,54 @@
 
 <h2>Inasistencias</h2>
 
-<div class="inasistencia">
-  <div id="tabs">
+
+<div class="demo">
+
+    <div id="tabs">
     <ul>
-      <li><a href="#tabs-1">Previas</a></li>
+      <li><%= link_to 'Previas', '#tabs-1' %></a></li>
+      <li><%= link_to 'Agregar', '#tabs-2' %></li>
     </ul>
-    <div id="#tabs-1">
-      <p>Hola</p>
+
+    <div id="tabs-1">
+      <p>
+        <% @docente.inasistencias.each do |ina| %>
+           <li>
+            <%= ina.observacion %> 
+            <%= link_to 'Eliminar', :controller => :inasistencias, :action => :destroy, :id => ina.id %>
+           </li>
+        <% end %>
+      </p>
+    </div>
+    
+    <div id="tabs-2">
+      <p>
+        <%= form_for @inasistencia, :url => { :controller => :inasistencias, :action => :create } do |f| %>
+          <div class="field">
+            <tr><%= f.label :justificacion %><%= f.text_field :justificacion %></br></tr>
+          </div>
+          <div class="field">
+            <tr><%= f.label :observacion %><%= f.text_field :observacion %></br></tr>
+          </div>
+          <div class="field">
+            <tr><%= hidden_field_tag :docente_id, @docente.id %></tr>
+          </div>
+          <div class="actions">
+            <tr><%= f.submit 'Agregar' %></tr>
+          </div>
+
+        <% end %>
+      </p>
     </div>
   </div>
 </div>
 
+
 <script>
   $(function() {
-    $( "#tabs" ).tabs();
-  });
-</script>
-
-
-
+        $( "#tabs" ).tabs();
+          });
+    </script>
 
 
 

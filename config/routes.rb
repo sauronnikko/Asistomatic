@@ -1,5 +1,9 @@
 Asistomatic::Application.routes.draw do
 
+  get "inasistencias/new"
+
+  get "inasistencias/show"
+
   get "bloques/index"
 
   get "bloques/show"
@@ -41,7 +45,9 @@ Asistomatic::Application.routes.draw do
   match '/bloques/new_varios' => 'bloques#new_varios', :as => 'bloques_new_varios'
   match '/bloques/destroy' => 'bloques#destroy', :as => 'destroy'
 
-
+  match '/inasistencias/index' => 'inasistencias#index', :as => 'inasistencia_index'
+  match '/inasistencias/create' => 'inasistencias#create', :as => 'inasistencia_create'
+  match '/inasistencias/destroy' => 'inasistencias#destroy', :as => 'inasistencias_destroy'
 
 #  resources :bloques
 

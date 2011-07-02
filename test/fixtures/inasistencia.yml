@@ -1,9 +1,24 @@
+# == Schema Information
+# Schema version: 20110702214522
+#
+# Table name: inasistencia
+#
+#  id            :integer(4)      not null, primary key
+#  justificacion :string(255)
+#  observacion   :string(255)
+#  docente_id    :integer(4)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
   justificacion: MyString
-  observaciones: MyString
+  observacion: MyString
+  docente_id: 1
 
 two:
   justificacion: MyString
-  observaciones: MyString
+  observacion: MyString
+  docente_id: 1
