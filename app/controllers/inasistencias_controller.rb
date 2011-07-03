@@ -6,6 +6,11 @@ class InasistenciasController < ApplicationController
     @inasistencia = Inasistencia.new(params[:inasistencia])
     @docente = Docente.find(params[:docente_id])
     @inasistencia.docente_id = @docente.id
+    @fecha = Fecha.new
+    @fecha.fecha = params[:datepicker]
+ 
+
+
 
     if @inasistencia.save and @docente.save
       respond_to do |format|

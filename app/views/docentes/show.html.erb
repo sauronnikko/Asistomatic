@@ -29,17 +29,29 @@
       <p>
         <%= form_for @inasistencia, :url => { :controller => :inasistencias, :action => :create } do |f| %>
           <div class="field">
-            <tr><%= f.label :justificacion %><%= f.text_field :justificacion %></br></tr>
+            <tr>
+              <td><%= f.label :justificacion %></td><td><%= f.text_area :justificacion, :cols => 40, :rows => 3 %></td></br>
+            </tr>
           </div>
           <div class="field">
-            <tr><%= f.label :observacion %><%= f.text_field :observacion %></br></tr>
+            <tr><%= f.label :observacion %><%= f.text_area :observacion, :cols => 40, :rows => 3 %></br></tr>
           </div>
+
+
+          <div class="field">
+            <tr>
+              <td><%= f.label "Fecha" %></td><td><%= text_field_tag "datepicker", '', :size => 8 %></br></td>
+            </tr>
+          </div>
+
+
           <div class="field">
             <tr><%= hidden_field_tag :docente_id, @docente.id %></tr>
           </div>
           <div class="actions">
             <tr><%= f.submit 'Agregar' %></tr>
           </div>
+
 
         <% end %>
       </p>
@@ -50,9 +62,11 @@
 
 <script>
   $(function() {
-        $( "#tabs" ).tabs();
-          });
+    $( "#tabs" ).tabs();
+    $("#datepicker").datepicker();
+  });
     </script>
+
 
 
 
