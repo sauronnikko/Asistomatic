@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110702214522
+# Schema version: 20110703170337
 #
 # Table name: inasistencia
 #
@@ -9,6 +9,7 @@
 #  docente_id    :integer(4)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  fecha_id      :integer(4)
 #
 
 class Inasistencia < ActiveRecord::Base
@@ -18,7 +19,7 @@ class Inasistencia < ActiveRecord::Base
   validates_presence_of :docente_id
 
   belongs_to :docente
-
+  belongs_to :fecha
 
 
 end

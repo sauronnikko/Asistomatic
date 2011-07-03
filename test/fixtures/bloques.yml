@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110625145635
+# Schema version: 20110703170013
 #
 # Table name: bloques
 #
@@ -9,6 +9,7 @@
 #  hora_fin   :time
 #  created_at :datetime
 #  updated_at :datetime
+#  fecha_id   :integer(4)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
